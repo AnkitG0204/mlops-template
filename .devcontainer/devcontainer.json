@@ -57,7 +57,7 @@
 		}
 	},
 
-	"remoteUser": "codespace",
+	"remoteUser": "vscode",
 
 	"overrideCommand": false,
 
