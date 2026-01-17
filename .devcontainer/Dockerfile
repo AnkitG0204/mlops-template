@@ -1,9 +1,9 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/codespaces-linux/.devcontainer/base.Dockerfile
-FROM mcr.microsoft.com/vscode/devcontainers/universal:2-focal
+FROM mcr.microsoft.com/vscode/devcontainers/python:3.11
 
 RUN apt-get update && apt-get -y install --no-install-recommends \
    ffmpeg \ 
-   python3.8-venv \
+   python3.11-venv \
    gcc \
    pciutils
 
@@ -19,7 +19,7 @@ RUN apt-get update \
 && systemctl restart docker
 
 #create global virtual environment using python standard library tools of virtualenv
-ARG USER="codespace"
+ARG USER="vscode"
 ARG VENV_PATH="/home/${USER}/venv"
 COPY requirements.txt /tmp/
 COPY Makefile /tmp/
